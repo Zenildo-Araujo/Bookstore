@@ -48,7 +48,7 @@
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="">
-                                <a href="/list_book">
+                                <a href="/">
                                     <i class="fas fa-book"></i>Listar Livros</a>
                             </li>
                             <li class="active">
@@ -82,7 +82,7 @@
                                             </font><strong><font style="vertical-align: inherit;">Basket</font></strong></font></div>
                                         <div class="card-body card-block">
 
-                                            <form action="" class="form-horizontal">
+                                            <form action="/add_book_csv" class="form-horizontal">
                                                 <div class="row form-group">
                                                     <div class="col col-md-3">
                                                         <label for="select" class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tipo: </font></font></label>

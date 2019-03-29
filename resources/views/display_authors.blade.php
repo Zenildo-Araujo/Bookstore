@@ -103,16 +103,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-lg-12">
                                     <!-- DATA TABLE-->
                                     <div class="table-responsive m-b-40">
                                         <table class="table table-borderless table-data3">
                                             <thead>
                                                 <tr>
                                                     <th>Price</th>
-                                                    <th>Type</th>
                                                     <th>Title</th>
-                                                    <th>Isbn</th>
                                                     <th>Authors</th>
                                                     <th></th>
                                                 </tr>
@@ -124,23 +122,11 @@
                                                     ?>
                                                     <tr>
                                                         <td><span class="status--denied"><?php echo '€ ' . $value['price']; ?></td>
-                                                        <td><span class="status--denied"><?php echo $value['type']; ?></span></td>
                                                         <td><span class="status--denied"><?php echo $value['title']; ?></span></td>
-                                                        <td><span class="status--denied"><?php echo $value['isbn']; ?></span></td>
                                                         <td><span class="status--denied"><?php echo $value['authors']; ?></span></td>
                                                         <td></td>
                                                     <?php }
                                                     ?>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="status--denied"><?php echo '€ ' . $total; ?></span>
-                                                    </td>
-                                                    <td><span class="status--denied"><?php echo ' - Total' ?></span></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                             <?php ?>
