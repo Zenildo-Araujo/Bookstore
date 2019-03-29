@@ -10,7 +10,7 @@
         <meta name="keywords" content="au theme template">
 
         <!-- Title Page-->
-        <title>Tables</title>
+        <title>Bookstore</title>
 
         <!-- Fontfaces CSS-->
         <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -108,24 +108,33 @@
                                                     <th>Isbn</th>
                                                     <th>Price</th>
                                                     <th>Authors</th>
-                                                    <th></th>
                                                 </tr>
                                             </thead>
-                                            <?php
-                                            foreach ($book as $value) {
-                                                ?>
-                                                <tbody>
+
+                                            <tbody>
+                                                <?php
+                                                foreach ($book as $value) {
+                                                    ?>
                                                     <tr>
-                                                        <td><?php echo $value['type']; ?></td>
-                                                        <td><?php echo $value['title']; ?></td>
-                                                        <td><?php echo $value['isbn']; ?></td>
-                                                        <td class="process"><?php echo 'â‚¬ ' . $value['price']; ?></td>
-                                                        <td><?php echo $value['authors']; ?></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            <?php }
-                                            ?>
+                                                        <td><span class="status--denied"><?php echo '€ ' . $value['price']; ?></td>
+                                                        <td><span class="status--denied"><?php echo $value['type']; ?></span></td>
+                                                        <td><span class="status--denied"><?php echo $value['title']; ?></span></td>
+                                                        <td><span class="status--denied"><?php echo $value['isbn']; ?></span></td>
+                                                        <td><span class="status--denied"><?php echo $value['authors']; ?></span></td>
+                                                    <?php }
+                                                    ?>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="status--denied"><?php echo '€ ' . $total; ?></span>
+                                                    </td>
+                                                    <td><span class="status--denied"><?php echo ' - Total' ?></span></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+
                                         </table>
                                     </div>
                                     <!-- END DATA TABLE-->

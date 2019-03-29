@@ -12,46 +12,6 @@ class book extends Model {
     private $author = array();
     private $price;
 
-    public function getType() {
-        return $this->type;
-    }
-
-    public function getTitle() {
-        return $this->title;
-    }
-
-    public function getAuthor() {
-        return $this->author;
-    }
-
-    public function getIsbn() {
-        return $this->isbn;
-    }
-
-    public function getPrice() {
-        return $this->price;
-    }
-
-    public function setType($type) {
-        $this->type = $type;
-    }
-
-    public function setTitle($title) {
-        $this->title = $title;
-    }
-
-    public function setAuthor($author) {
-        $this->author = $author;
-    }
-
-    public function setIsbn($isbn) {
-        $this->isbn = $isbn;
-    }
-
-    public function setPrice($price) {
-        $this->price = $price;
-    }
-
     public function open_file() {
         if (($handle = fopen('C:\xampp\htdocs\bookstore\basket.csv', 'r')) !== false) {
             return $handle;
@@ -72,25 +32,6 @@ class book extends Model {
             fclose($handle);
         }
         return --$row;
-    }
-
-    public function write_file($data) {
-        $book = array();
-        while ($line = fgetcsv($data, 100, ',')) {
-            $this->setType($line[0]);
-            $this->setTitle($line[1]);
-            $this->setIsbn($line[2]);
-            $this->setPrice($line[3]);
-            $this->setAuthor($line[4]);
-            $book[] = [
-                'type' => $this->getType(),
-                'title' => $this->getTitle(),
-                'isbn' => $this->getIsbn(),
-                'price' => $this->getPrice(),
-                'authors' => $this->getAuthor()
-            ];
-        }
-        return $book;
     }
 
 }

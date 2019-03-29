@@ -12,22 +12,30 @@ class bookstore extends Controller {
 
     public function index() {
         $book = array();
-        $i = 1;
+        $count = 0;
+        $author = array();
+        $total = 0;
         $data = $this->book->open_file();
-        $file = $this->book->write_file($data);
-        while (!empty($file[$i])) {
-            switch ($file[1]['type']) {
+        while ($line = fgetcsv($data, 100, ',')) {
+            $author[$count] = explode("|", $line[4]);
+            switch ($line[0]) {
                 case 'NewBook':
                 case 'UsedBook':
                 case 'ExclusiveBook':
-                    $book[$i] = $file[$i];
-                //dd($file[$i]);
+                    $book[] = [
+                        'type' => $line[0],
+                        'title' => $line[1],
+                        'isbn' => $line[2],
+                        'price' => number_format($line[3], 2, '.', '.'),
+                        'authors' => (count($author[$count]) >= 2) ? $author[$count][0] . "," . $author[$count][1] : $author[$count][0],
+                        $total += number_format($line[3], 2, '.', '.')
+                    ];
             }
-            ++$i;
+            $count++;
         }
-
+        //dd($book);
         fclose($data);
-        return view('home', ['book' => $book]);
+        return view('home', ['book' => $book, 'total' => $total]);
     }
 
     public function count_regist() {
