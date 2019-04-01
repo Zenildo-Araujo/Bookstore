@@ -47,13 +47,11 @@
                 <div class="menu-sidebar__content js-scrollbar1">
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
-                            <li class="">
-                                <a href="/">
-                                    <i class="fas fa-book"></i>Listar Livros</a>
-                            </li>
                             <li class="active">
-                                <a href="/add_item">
-                                    <i class="fas fa-book"></i>Add Livro</a>
+                                <a href="/">
+                                    <i class="fas fa-book"></i>Listar Livros <?php
+                                    echo $lines;
+                                    ?></a>
                             </li>
                             <li class="">
                                 <a href="/check_basket_repeat">
@@ -92,7 +90,7 @@
                                                         <label for="select" class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tipo: </font></font></label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <select name="type" id="select" class="form-control">
+                                                        <select name="type" id="select" class="form-control" required>
                                                             <option value="0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor selecione</font></font></option>
                                                             <option value="UsedBook"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Usado</font></font></option>
                                                             <option value="NewBook"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novo</font></font></option>
@@ -105,7 +103,7 @@
                                                         <label for="text-input" class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título:</font></font></label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <input type="text" id="text-input" name="title" placeholder="Título do livro" class="form-control">
+                                                        <input type="text" id="text-input" name="title" placeholder="Título do livro" class="form-control" required>
                                                         <small class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Este é o título do livro</font></font></small>
                                                     </div>
                                                 </div>
@@ -114,7 +112,7 @@
                                                         <label for="" class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ISBN: </font></font></label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <input type="" id="email-input" name="isbn" placeholder="Enter ISBN" class="form-control">
+                                                        <input type="" id="email-input" name="isbn" placeholder="Enter ISBN" class="form-control" required>
                                                         <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor introduza o seu ISBN</font></font></small>
                                                     </div>
                                                 </div>
@@ -123,7 +121,7 @@
                                                         <label  class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Preço: </font></font></label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <input type="number"  name="price" placeholder="Preço" class="form-control">
+                                                        <input type="number"  name="price" placeholder="Preço" class="form-control" required>
                                                         <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor, digite o preço</font></font></small>
                                                     </div>
                                                 </div>
@@ -132,7 +130,7 @@
                                                         <label  class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autor: </font></font></label>
                                                     </div>
                                                     <div class="col-12 col-md-9">
-                                                        <input type="Text"  name="author" placeholder="Autor" class="form-control">
+                                                        <input type="Text"  name="author" placeholder="Autor" class="form-control" required>
                                                         <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor introduza o Autor</font></font></small>
                                                     </div>
                                                 </div>

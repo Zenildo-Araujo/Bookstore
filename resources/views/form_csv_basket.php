@@ -59,8 +59,8 @@
                                     <i class="fas fa-book"></i>Add Livro</a>
                             </li>
                             <li class="">
-                                <a href="/check_author">
-                                    <i class="fas fa-book"></i>Consultar Autores</a>
+                                <a href="/check_basket_repeat">
+                                    <i class="fas fa-book"></i>Basket agregados e quantidade</a>
                             </li>
                         </ul>
                     </nav>

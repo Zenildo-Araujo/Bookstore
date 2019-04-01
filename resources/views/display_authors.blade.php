@@ -55,10 +55,6 @@
                                     ?></a>
                             </li>
                             <li class="">
-                                <a href="/add_item">
-                                    <i class="fas fa-book"></i>Add Livro</a>
-                            </li>
-                            <li class="">
                                 <a href="/check_basket_repeat">
                                     <i class="fas fa-book"></i>Basket agregados e quantidade</a>
                             </li>

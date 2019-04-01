@@ -19,6 +19,4 @@ Route::get('/check_basket_repeat', 'bookstore@result_check_repeat');
 Route::get('/api/list_book', 'book_API@all_book');
 Route::post('/api/add_book', 'book_API@add_book');
 
-Route::get('/add_item', function () {
-    return view('form_add');
-});
+Route::get('/add_item','bookstore@add' );

@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/bookstore/app/Http/Controllers/book_API.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/Http/Controllers/bookstore.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/book.php</file>
-            <file>file:/C:/xampp/htdocs/bookstore/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/bookstore/resources/views/agreg_produt.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/routes/web.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/basket.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/resources/views/display_authors.blade.php</file>

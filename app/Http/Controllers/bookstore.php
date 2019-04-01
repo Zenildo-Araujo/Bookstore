@@ -61,4 +61,8 @@ class bookstore extends Controller {
         return view('agreg_produt', ['book' => $book, 'lines' => $this->count_regist()]);
     }
 
+    public function add() {
+        return view('form_add', ['lines' => $this->count_regist()]);
+    }
+
 }

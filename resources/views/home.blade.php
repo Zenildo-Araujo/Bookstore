@@ -55,10 +55,6 @@
                                     ?></a>
                             </li>
                             <li class="">
-                                <a href="/add_item">
-                                    <i class="fas fa-book"></i>Add Livro</a>
-                            </li>
-                            <li class="">
                                 <a href="/check_basket_repeat">
                                     <i class="fas fa-book"></i>Basket agregados e quantidade</a>
                             </li>
@@ -86,8 +82,8 @@
                                     <h3 class="title-5 m-b-35">data table</h3>
                                     <div class="table-data__tool">
                                         <div class="table-data__tool-right">
-                                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                <i class="zmdi zmdi-plus"></i>add item</button>
+                                            <a href="/add_item" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                <i class="zmdi zmdi-plus"></i>add item</a>
                                             <button class="au-btn au-btn-icon au-btn--blue au-btn--small">CSV</button>
                                             <button class="au-btn au-btn-icon au-btn--blue au-btn--small">TXT</button>
                                             <button class="au-btn au-btn-icon au-btn--blue au-btn--small">PDF</button>
