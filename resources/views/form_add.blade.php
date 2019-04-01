@@ -56,8 +56,8 @@
                                     <i class="fas fa-book"></i>Add Livro</a>
                             </li>
                             <li class="">
-                                <a href="/check_author">
-                                    <i class="fas fa-book"></i>Consultar Autores</a>
+                                <a href="/check_basket_repeat">
+                                    <i class="fas fa-book"></i>Basket agregados e quantidade</a>
                             </li>
                         </ul>
                     </nav>
@@ -136,16 +136,17 @@
                                                         <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor introduza o Autor</font></font></small>
                                                     </div>
                                                 </div>
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-dot-circle-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Enviar
+                                                        </font></font></button>
+                                                    <button type="reset" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-ban"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Restabelecer
+                                                        </font></font></button>
+                                                </div>
                                             </form>
                                         </div>
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-dot-circle-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Enviar
-                                                </font></font></button>
-                                            <button type="reset" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-ban"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Restabelecer
-                                                </font></font></button>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col-md-12">

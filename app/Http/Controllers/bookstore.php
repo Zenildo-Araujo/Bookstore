@@ -15,7 +15,8 @@ class bookstore extends Controller {
 
     public function index() {
         $book = $this->book->open_file();
-        return view('home', ['book' => $book, 'total' => $book[5]['0'], 'lines' => $this->count_regist()]);
+        $n = $this->book->number_regist();
+        return view('home', ['book' => $book, 'total' => $book[--$n]['0'], 'lines' => $this->count_regist()]);
     }
 
     public function count_regist() {
@@ -38,6 +39,26 @@ class bookstore extends Controller {
                 $book = $this->basket->check_basket($type);
                 return view('display_authors', ['book' => $book, 'lines' => $this->count_regist()]);
         }
+    }
+
+    public function Add_book(Request $request) {
+        $dados = array(
+            'isbn' => $request->input('isbn'),
+            'price' => $request->input('price'),
+            'author' => $request->input('author'),
+            'type' => $request->input('type'),
+            'title' => $request->input('title')
+        );
+        $this->basket->add_book_csv($dados);
+        //dd($dados);
+        return redirect('/');
+    }
+
+    public function result_check_repeat() {
+        $book = $this->basket->check_basket_repeat();
+        #dd($books);
+        //dd($book);
+        return view('agreg_produt', ['book' => $book, 'lines' => $this->count_regist()]);
     }
 
 }

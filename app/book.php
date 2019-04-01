@@ -12,6 +12,14 @@ class book extends Model {
     private $authors = array();
     private $price;
 
+    function getIsbn() {
+        return $this->isbn;
+    }
+
+    function setIsbn($isbn) {
+        $this->isbn = $isbn;
+    }
+
     function getType() {
         return $this->type;
     }
