@@ -13,6 +13,7 @@
 
 Route::get('/', 'bookstore@index');
 Route::get('/check_book', 'bookstore@result_check');
+Route::get('/add_book_csv', 'bookstore@result_check');
 
 Route::get('/add_item', function () {
     return view('form_add');

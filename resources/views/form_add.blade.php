@@ -55,6 +55,10 @@
                                 <a href="/add_item">
                                     <i class="fas fa-book"></i>Add Livro</a>
                             </li>
+                            <li class="">
+                                <a href="/check_author">
+                                    <i class="fas fa-book"></i>Consultar Autores</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

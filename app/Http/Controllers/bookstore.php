@@ -29,16 +29,15 @@ class bookstore extends Controller {
     }
 
     public function result_check(Request $request) {
-        //$author = $request->input('author');
-        //$file = $request->input('file');
         $type = $request->input('search');
-        //$book = $this->basket->check_book($type);
-
-        $handle = $this->book->open_file();
-
-        $book = $this->book->file($type, $handle);
-        fclose($handle);
-        return view('display_authors', ['book' => $book, 'lines' => $this->count_regist()]);
+        switch ($type) {
+            case '-displayauthors':
+                $book = $this->basket->file();
+                return view('display_authors', ['book' => $book, 'lines' => $this->count_regist()]);
+            default:
+                $book = $this->basket->check_basket($type);
+                return view('display_authors', ['book' => $book, 'lines' => $this->count_regist()]);
+        }
     }
 
 }

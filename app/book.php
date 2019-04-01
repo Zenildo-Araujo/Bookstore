@@ -9,24 +9,31 @@ class book extends Model {
     private $type;
     private $title;
     private $isbn;
-    private $author = array();
+    private $authors = array();
     private $price;
 
-    function getAuthor() {
-        return $this->author;
+    function getType() {
+        return $this->type;
     }
 
-    function setAuthor($author) {
-        $this->author = $author;
+    function setType($type) {
+        $this->type = $type;
+    }
+
+    function getAuthors() {
+        return $this->authors;
+    }
+
+    function setAuthors($authors) {
+        $this->authors = $authors;
     }
 
     public function open_file() {
         if (($handle = fopen('C:\xampp\htdocs\bookstore\basket.csv', 'r')) !== false) {
             $book = array();
-            $count = 0;
             $total = 0;
             while ($line = fgetcsv($handle, 100, ',')) {
-                $this->setAuthor(explode("|", $line[4]));
+                $this->setAuthors(explode("|", $line[4]));
                 switch ($line[0]) {
                     case 'NewBook':
                     case 'UsedBook':
@@ -36,13 +43,11 @@ class book extends Model {
                             'title' => $line[1],
                             'isbn' => $line[2],
                             'price' => number_format($this->discount_book($line[3], $line[0]), 2, '.', '.'),
-                            'authors' => (count($this->getAuthor()) >= 2) ? $this->getAuthor()[0] . "," . $this->getAuthor()[1] : $this->getAuthor()[0],
+                            'authors' => (count($this->getAuthors()) >= 2) ? $this->getAuthors()[0] . "," . $this->getAuthors()[1] : $this->getAuthors()[0],
                             $total += number_format($this->discount_book($line[3], $line[0]), 2, '.', '.')
                         ];
                 }
-                $count++;
             }
-            fclose($handle);
         }
         return $book;
     }
@@ -71,32 +76,6 @@ class book extends Model {
                 return $value;
             default :
                 return false;
-        }
-    }
-
-    public function file($type, $handle) {
-        $book = array();
-        $count = 0;
-        $total = 0;
-        switch ($type) {
-            case '-displayauthors':
-                while ($line = fgetcsv($handle, 1000, ',')) {
-                    $this->setAuthor(explode("|", $line[4]));
-                    switch ($line[0]) {
-                        case 'NewBook':
-                        case 'UsedBook':
-                        case 'ExclusiveBook':
-                            $book[] = [
-                                'title' => $line[1],
-                                'price' => number_format($line[3], 2, '.', '.') . '/' . number_format($this->discount_book($line[3], $line[0]), 2, '.', '.'),
-                                'authors' => (count($this->getAuthor()) >= 2) ? $this->getAuthor()[0] . "," . $this->getAuthor()[1] : $this->getAuthor()[0],
-                                $total += number_format($this->basket->discount_book($line[3], $line[0]), 2, '.', '.')
-                            ];
-                    }
-                    $count++;
-                }
-                //dd($this->getAuthor());
-                return $book;
         }
     }
 
