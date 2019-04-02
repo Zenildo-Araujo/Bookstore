@@ -29,9 +29,7 @@ Um cesto deve responder a 2 perguntas:
 - Qual o total a pagar com duas casas decimais?
 
 Deve ser possivel importar um csv com um cesto. O programa deve ler esse csv e devolva o
-preço final junto com a lista de livros.
-
-no formato abaixo (atenção ao alinhamento à esquerda):
+preço final junto com a lista de livros no formato abaixo (atenção ao alinhamento à esquerda):
 
 > € 25.00 [Exclusivo] ZAB: Introduction to Python - Guido van rossum
 > € 105.00 [Usado] USY: The Art of Computer Programming - Donalth Knuth
@@ -54,3 +52,9 @@ Conjunto de funcionalidades extra, opcionais ao exercicio:
 
 > € 49.50 (2) AAA: The C Programming Language - Dennis M. Ritchie, Brian W. Kernighan
 
+- (III) um programa com unit testing
+- (IV) Fazer um Webservice REST numa framework MVC à escolha, com os endpoints (não é
+  necessário persistir dados para um base de dados):
+  - Adicionar livro ao carrinho
+  - Obter o carrinho
+- (V)não usar ifs
