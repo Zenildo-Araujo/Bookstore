@@ -67,11 +67,7 @@ class basket extends Model {
                 ];
             }
         }
-
         $repeat = array_count_values(array_column($book, 'isbn'));
-
-
-        dd();
     }
 
     public function add_book_csv($dados) {
