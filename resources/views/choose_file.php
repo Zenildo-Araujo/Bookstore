@@ -10,7 +10,7 @@
         <meta name="keywords" content="au theme template">
 
         <!-- Title Page-->
-        <title>Bookstore</title>
+        <title>Add Item</title>
 
         <!-- Fontfaces CSS-->
         <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -45,13 +45,12 @@
                     </a>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
-                    @yield('menu')
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="active">
                                 <a href="/">
                                     <i class="fas fa-book"></i>Listar Livros <?php
-                                    echo $lines;
+                                    #echo $lines;
                                     ?></a>
                             </li>
                             <li class="">
@@ -76,62 +75,48 @@
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
+
                             <div class="row">
-                                <div class="col-md-12">
-                                    <!-- DATA TABLE -->
-                                    <h3 class="title-5 m-b-35">data table</h3>
-                                    <div class="table-data__tool">
-                                        <div class="table-data__tool-right">
-                                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                <i class="zmdi zmdi-plus"></i>add item</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">CSV</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">TXT</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">PDF</button>
+                                <div class="col-lg-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong><font style="vertical-align: inherit;"></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Verificar no
+                                            </font><strong><font style="vertical-align: inherit;">Basket</font></strong></font></div>
+                                        <div class="card-body card-block">
+
+                                            <form action="/check_choose_file" class="form-horizontal" enctype="multipart/form-data">
+
+                                                <div class="row form-group">
+                                                    <div class="col col-md-3">
+                                                        <label  class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arquivo: </font></font></label>
+                                                    </div>
+                                                    <div class="col-12 col-md-9">
+                                                        <input type="file"  name="file" placeholder="File" class="form-control" required>
+                                                        <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor escolha o Ficheiro</font></font></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col col-md-3">
+                                                        <label  class=" form-control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autor: </font></font></label>
+                                                    </div>
+                                                    <div class="col-12 col-md-9">
+                                                        <input type="Text"  name="author" placeholder="Autor" class="form-control" required>
+                                                        <small class="help-block form-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor introduza o Autor</font></font></small>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-dot-circle-o"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Enviar
+                                                        </font></font></button>
+                                                    <button type="reset" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-ban"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Restabelecer
+                                                        </font></font></button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <form class="form-header" action="/check_book">
-                                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search" />
-                                            <button class="au-btn--submit" type="submit">
-                                                <i class="zmdi zmdi-search"></i>
-                                            </button>
-                                        </form>
+
                                     </div>
-                                    <!-- END DATA TABLE -->
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <!-- DATA TABLE-->
-                                    <div class="table-responsive m-b-40">
-                                        <table class="table table-borderless table-data3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Price</th>
-                                                    <th>Title</th>
-                                                    <th>Authors</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <?php ?>
-                                            <tbody>
-                                                <?php
-                                                foreach ($book as $value) {
-                                                    ?>
-                                                    <tr>
-                                                        <td><span class="status--denied"><?php echo '€ ' . $value['price']; ?></td>
-                                                        <td><span class="status--denied"><?php echo $value['title']; ?></span></td>
-                                                        <td><span class="status--denied"><?php echo $value['authors']; ?></span></td>
-                                                        <td></td>
-                                                    <?php }
-                                                    ?>
-                                                </tr>
-                                            </tbody>
-                                            <?php ?>
-                                        </table>
-                                    </div>
-                                    <!-- END DATA TABLE-->
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="copyright">
                                         <p>Copyright Â© 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>

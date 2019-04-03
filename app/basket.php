@@ -51,23 +51,29 @@ class basket extends Model {
     }
 
     public function check_basket_repeat() {
-        $book = array();
-        $isbn = array();
-        $total = 0;
-        if (($handle = fopen('C:\xampp\htdocs\bookstore\basket.csv', 'r')) !== false) {
-            while ($line = fgetcsv($handle, 100, ',')) {
-                $isbn[] = $line;
-                $this->book->setAuthors(explode("|", $line[4]));
-                $book[] = [
-                    'title' => $line[1],
-                    'isbn' => $line[2],
-                    'price' => number_format($this->book->discount_book($line[3], $line[0]), 2, '.', '.'),
-                    'authors' => (count($this->book->getAuthors()) >= 2) ? $this->book->getAuthors()[0] . ", " . $this->book->getAuthors()[1] : $this->book->getAuthors()[0],
-                    'total' => $total +=number_format($this->book->discount_book($line[3], $line[0]), 2, '.', '.'),
-                ];
+        $book = $this->book->open_file();
+        $colum = array_count_values(array_column($book, 'isbn'));
+        $book1 = array();
+        foreach ($colum as $key => $value) {
+            $coun = 0;
+            $calc = 0;
+            for ($i = 0; $i <= count($book) - 1; $i++) {
+                if ($key == $book[$i]['isbn'] && $value > 1):
+                    $coun++;
+                    $calc += $book[$i]['price'];
+                    if ($coun > 1) {
+                        $book1[] = [
+                            'price' => $calc,
+                            'isbn' => $book[$i]['isbn'],
+                            'title' => $book[$i]['title'],
+                            'authors' => $book[$i]['authors'],
+                            'qtd' => $value
+                        ];
+                    }
+                endif;
             }
         }
-        $repeat = array_count_values(array_column($book, 'isbn'));
+        return $book1;
     }
 
     public function add_book_csv($dados) {
@@ -79,6 +85,23 @@ class basket extends Model {
         $FileHandle = fopen('C:\xampp\htdocs\bookstore\basket.csv', 'a');
         fwrite($FileHandle, "$type,$title,$isbn,$price,$author");
         fclose($FileHandle);
+    }
+
+    public function check_choose_file($dados, $file) {
+        $book = array();
+        if (($handle = fopen("C:\Users\zenil\OneDrive\Ambiente de Trabalho\\$file", "r")) !== false) {
+            while ($line = fgetcsv($handle, 100, ',')) {
+                $this->book->setAuthors(explode("|", $line[4]));
+                (strtolower($dados) == strtolower($this->book->getAuthors()[0])) ?
+                                $book[] = [
+                            'title' => $line[1],
+                            'price' => number_format($line[3], 2, '.', '.') . '/' . number_format($this->book->discount_book($line[3], $line[0]), 2, '.', '.'),
+                            'authors' => (count($this->book->getAuthors()) >= 2) ? $this->book->getAuthors()[0] . ", " . $this->book->getAuthors()[1] : $this->book->getAuthors()[0],
+                                ] : 'Não encontrado';
+            }
+        }
+        fclose($handle);
+        return $book;
     }
 
 }

@@ -6,11 +6,10 @@
             <file>file:/C:/xampp/htdocs/bookstore/app/Http/Controllers/book_API.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/Http/Controllers/bookstore.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/book.php</file>
+            <file>file:/C:/xampp/htdocs/bookstore/resources/views/display_authors.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/routes/web.php</file>
             <file>file:/C:/xampp/htdocs/bookstore/app/basket.php</file>
-            <file>file:/C:/xampp/htdocs/bookstore/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/bookstore/resources/views/display_authors.blade.php</file>
-            <file>file:/C:/xampp/htdocs/bookstore/resources/views/form_add.blade.php</file>
+            <file>file:/C:/xampp/htdocs/bookstore/resources/views/home.php</file>
         </group>
     </open-files>
 </project-private>

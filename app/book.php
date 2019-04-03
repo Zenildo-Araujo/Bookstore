@@ -57,6 +57,7 @@ class book extends Model {
                 }
             }
         }
+
         return $book;
     }
 

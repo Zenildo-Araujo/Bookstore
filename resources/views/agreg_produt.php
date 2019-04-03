@@ -45,7 +45,6 @@
                     </a>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
-                    @yield('menu')
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="active">
@@ -86,11 +85,8 @@
                                     <h3 class="title-5 m-b-35">data table</h3>
                                     <div class="table-data__tool">
                                         <div class="table-data__tool-right">
-                                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                <i class="zmdi zmdi-plus"></i>add item</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">CSV</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">TXT</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">PDF</button>
+                                            <a href="/add_item" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                <i class="zmdi zmdi-plus"></i>add item</a>
                                         </div>
                                         <form class="form-header" action="/check_book">
                                             <input class="au-input au-input--xl" type="text" name="search" placeholder="Search" />
@@ -110,6 +106,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Price</th>
+                                                    <th>Isbn</th>
                                                     <th>Title</th>
                                                     <th>Authors</th>
                                                     <th></th>
@@ -121,7 +118,8 @@
                                                 foreach ($book as $value) {
                                                     ?>
                                                     <tr>
-                                                        <td><span class="status--denied"><?php echo '€ ' . $value['price'] . '(' . $value['i'] . ')'; ?></td>
+                                                        <td><span class="status--denied"><?php echo '€ ' . $value['price'] . ' ( ' . $value['qtd'] . ' ) '; ?></td>
+                                                        <td><span class="status--denied"><?php echo $value['isbn'] ?></td>
                                                         <td><span class="status--denied"><?php echo $value['title']; ?></span></td>
                                                         <td><span class="status--denied"><?php echo $value['authors']; ?></span></td>
                                                         <td></td>

@@ -45,7 +45,7 @@
                     </a>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
-                    @yield('menu')
+
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li class="active">
@@ -79,14 +79,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <!-- DATA TABLE -->
-                                    <h3 class="title-5 m-b-35">Bookstore</h3>
+                                    <h3 class="title-5 m-b-35">data table</h3>
                                     <div class="table-data__tool">
                                         <div class="table-data__tool-right">
                                             <a href="/add_item" class="au-btn au-btn-icon au-btn--green au-btn--small">
                                                 <i class="zmdi zmdi-plus"></i>add item</a>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">CSV</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">TXT</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">PDF</button>
                                         </div>
                                         <form class="form-header" action="/check_book">
                                             <input class="au-input au-input--xl" type="text" name="search" placeholder="Search" />
@@ -99,16 +96,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-lg-12">
                                     <!-- DATA TABLE-->
                                     <div class="table-responsive m-b-40">
                                         <table class="table table-borderless table-data3">
                                             <thead>
                                                 <tr>
                                                     <th>Price</th>
-                                                    <th>Type</th>
                                                     <th>Title</th>
-                                                    <th>Isbn</th>
                                                     <th>Authors</th>
                                                     <th></th>
                                                 </tr>
@@ -120,23 +115,11 @@
                                                     ?>
                                                     <tr>
                                                         <td><span class="status--denied"><?php echo '€ ' . $value['price']; ?></td>
-                                                        <td><span class="status--denied"><?php echo $value['type']; ?></span></td>
                                                         <td><span class="status--denied"><?php echo $value['title']; ?></span></td>
-                                                        <td><span class="status--denied"><?php echo $value['isbn']; ?></span></td>
                                                         <td><span class="status--denied"><?php echo $value['authors']; ?></span></td>
                                                         <td></td>
                                                     <?php }
                                                     ?>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span class="status--denied"><?php echo '€ ' . $total; ?></span>
-                                                    </td>
-                                                    <td><span class="status--denied"><?php echo ' - Total' ?></span></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                             <?php ?>

@@ -56,13 +56,18 @@ class bookstore extends Controller {
 
     public function result_check_repeat() {
         $book = $this->basket->check_basket_repeat();
-        #dd($books);
-        //dd($book);
         return view('agreg_produt', ['book' => $book, 'lines' => $this->count_regist()]);
     }
 
     public function add() {
         return view('form_add', ['lines' => $this->count_regist()]);
+    }
+
+    public function choose_file(Request $request) {
+        $author = $request->input('author');
+        $file = $request->input('file');
+        $book = $this->basket->check_choose_file($author, $file);
+        return view('display_authors', ['book' => $book, 'lines' => $this->count_regist()]);
     }
 
 }

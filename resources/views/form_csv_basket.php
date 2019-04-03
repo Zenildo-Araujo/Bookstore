@@ -86,11 +86,8 @@
                                     <h3 class="title-5 m-b-35">data table</h3>
                                     <div class="table-data__tool">
                                         <div class="table-data__tool-right">
-                                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                <i class="zmdi zmdi-plus"></i>add item</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">CSV</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">TXT</button>
-                                            <button class="au-btn au-btn-icon au-btn--blue au-btn--small">PDF</button>
+                                            <a href="/add_item" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                <i class="zmdi zmdi-plus"></i>add item</a>
                                         </div>
                                         <form class="form-header" action="/check_book">
                                             <input class="au-input au-input--xl" type="text" name="search" placeholder="Search" />
